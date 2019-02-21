@@ -1,1 +1,6 @@
-<p (click) = "callingServer()"></p>
+
+    <div  *ngFor="let item of Data; let i = index; let odd = odd ">
+      <a href="/questiondetail" *ngIf="odd" id="{{Data[i-1]}}" (click)=QuestionClicked(question)  #question>{{Data[i]}}</a>
+    </div>
+
+    

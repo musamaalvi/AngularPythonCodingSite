@@ -6,6 +6,7 @@ from flask_restful import Resource, Api
 import sys
 from io import StringIO
 import contextlib
+import json
 
 app = Flask(__name__)
 api = Api(app)
@@ -13,7 +14,15 @@ app.debug = True
 CORS(app)
 @app.route("/questions")
 def GetQuestions():
-    return jsonify({'text':'Hello World!'})
+     arr = []
+     with open('MainPage/main.txt') as f:
+          lines = f.readlines()
+
+     for line in lines:
+          arr.append(line.strip().split(",")[1])
+          arr.append(line.strip().split(",")[0])
+     
+     return json.dumps(arr)
 
 class Employees(Resource):
     def get(self):

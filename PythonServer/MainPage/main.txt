@@ -1,4 +1,2 @@
-sleep_in
-10001
-monkey_trouble
-10002
+sleep_in,10001
+monkey_trouble,10002

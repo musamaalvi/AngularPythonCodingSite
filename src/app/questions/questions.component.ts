@@ -7,14 +7,19 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-  repsponseData:JSON;
+  Data;
   constructor(private httpClient: HttpClient) {
     this.httpClient.get('http://127.0.0.1:5002/questions').subscribe(data =>{
-      this.repsponseData = data as JSON;
+      this.Data = data
+     
+      console.log(data)
       
     })
   }
 
+  QuestionClicked(question){
+    
+  }
 
   callingServer(){
 
