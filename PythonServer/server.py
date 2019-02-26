@@ -60,6 +60,19 @@ def analyzeText():
               returnValue = False    
          return jsonify({'some_message':returnValue})
 
+@app.route('/questiondesc', methods=['POST'])
+def QuestionDescription():
+    if request.method == "POST":
+         content = request.get_json()
+         temp = content['id']
+         
+         f = open("DetailsPage/"+str(temp)+".txt", "r")
+         code = f.read()
+         print("MainPage/"+str(temp)+".txt")
+         print(code)
+         return jsonify({'some_message':code})
+
+
 
 @contextlib.contextmanager
 def stdoutIO(stdout=None):

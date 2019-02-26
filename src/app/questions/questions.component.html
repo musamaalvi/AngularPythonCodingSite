@@ -1,6 +1,6 @@
 
     <div  *ngFor="let item of Data; let i = index; let odd = odd ">
-      <a href="/questiondetail" *ngIf="odd" id="{{Data[i-1]}}" (click)=QuestionClicked(question)  #question>{{Data[i]}}</a>
+      <a href="/questiondetail/{{Data[i-1]}}" *ngIf="odd" id="{{Data[i-1]}}" (click)=QuestionClicked(question)  #question>{{Data[i]}}</a>
     </div>
 
     
