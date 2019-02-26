@@ -1,3 +1,16 @@
 <p>
   {{serverData['some_message']}}
 </p>
+
+
+<textarea contenteditable="true" #pythonCode>
+  
+</textarea>
+
+<div>
+<button id="Submit_Button" (click)=RunCode(pythonCode)>Click to Submit </button>
+</div>
+
+<div>
+  <p>{{codeResult}}</p>
+</div>

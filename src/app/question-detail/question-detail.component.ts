@@ -10,6 +10,20 @@ import { HttpClient } from '@angular/common/http';
 export class QuestionDetailComponent implements OnInit {
   id: number;
   serverData;
+  codeResult=""
+
+  RunCode(pythonCode){
+    var code = pythonCode.value;
+    var obj = {
+      id: this.id,
+      code: pythonCode.value
+    }
+
+    this.httpClient.post('http://127.0.0.1:5002/coderun', obj).subscribe(data => {
+      this.codeResult = data['result']
+    })
+  }
+
   constructor(private route: ActivatedRoute, private httpClient: HttpClient) {
     
    }

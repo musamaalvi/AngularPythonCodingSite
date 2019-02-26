@@ -34,31 +34,29 @@ class Employees_Name(Resource):
         return jsonify({'some_message':'message'})
      #    result = {'data': {'id':1, 'name':'Balram'}}
     
-@app.route('/processText', methods=['POST'])
+@app.route('/coderun', methods=['POST'])
 def analyzeText():
     if request.method == "POST":
          content = request.get_json()
          temp = content['code']
-         t = temp.split("\\n")
-         f = open("demofile.txt", "w") 
-         for i in  t:
-              print(i,file=f)
-         f.close()
-         f = open("demofile.txt", "r")
-         code = f.read()
+     #     t = temp.split("\\n")
+     #     f = open("demofile.txt", "w") 
+     #     for i in  t:
+     #          print(i,file=f)
+     #     f.close()
+         
          
          with stdoutIO() as s:
-              exec(code)
+              exec(temp)
 
-         answer = open(str(content['id'])+".txt","r")
+         answer = open("demofile.txt", "r")
          answer = answer.read()
-         print(answer)
          print(s.getvalue())
          if(answer == s.getvalue()):
               returnValue = True
          else:
-              returnValue = False    
-         return jsonify({'some_message':returnValue})
+              returnValue = False
+         return jsonify({'result':returnValue})
 
 @app.route('/questiondesc', methods=['POST'])
 def QuestionDescription():
