@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class QuestionDetailComponent implements OnInit {
   id: number;
   serverData;
+  isLoaded = false
   codeResult=""
 
   RunCode(pythonCode){
@@ -19,7 +20,7 @@ export class QuestionDetailComponent implements OnInit {
       code: pythonCode.value
     }
 
-    this.httpClient.post('http://127.0.0.1:5002/coderun', obj).subscribe(data => {
+    this.httpClient.post('http://127.0.0.1:5002/testcasescoderun', obj).subscribe(data => {
       this.codeResult = data['result']
     })
   }
@@ -38,6 +39,7 @@ export class QuestionDetailComponent implements OnInit {
     }
     this.httpClient.post('http://127.0.0.1:5002/questiondesc', obj).subscribe(data => {
       this.serverData = data
+      this.isLoaded = true
       console.log(this.serverData)
     })
   }

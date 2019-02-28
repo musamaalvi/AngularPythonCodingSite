@@ -12,6 +12,54 @@ app = Flask(__name__)
 api = Api(app)
 app.debug = True
 CORS(app)
+
+@app.route('/fortestingpurpose', methods=['POST'])
+def testingpurpose():
+     f = open("TestCasesCode/10003.txt")
+     line = f.readline()
+     while line:
+          print(line)
+          line = f.readline()
+     return jsonify({'result':'testing'})
+@app.route('/testcasescoderun', methods=['POST'])
+def testCasesCodeRun():
+    if request.method == "POST":
+         content = request.get_json()
+         temp = content['code']
+     #     t = temp.split("\\n")
+     #     f = open("demofile.txt", "w") 
+     #     for i in  t:
+     #          print(i,file=f)
+     #     f.close()
+         error_code = ""
+         f = open("TestCasesCode/" +str(content['id'])+".txt")
+         additionalCode = f.readline()
+         answerFile = open("Code/"+str(content['id'])+".txt", "r")
+         while additionalCode:
+               
+               codetorun=str(temp)+"\n"+additionalCode
+               #print(codetorun)
+               with stdoutIO() as s:
+                    try:
+                         exec(codetorun)
+                    except Exception as exp:
+                         error_code = exp
+               
+               answer = answerFile.readline()
+               
+               additionalCode = f.readline()
+               #print(answer)
+               
+               if(answer == s.getvalue()):
+                    returnValue = True
+                    print(returnValue)
+               else:
+                    returnValue = False
+                    print(returnValue)
+     #     if error_code == "":
+     #          error_code = returnValue
+         return jsonify({'result':'str(error_code)'})
+
 @app.route("/questions")
 def GetQuestions():
      arr = []
@@ -44,19 +92,25 @@ def analyzeText():
      #     for i in  t:
      #          print(i,file=f)
      #     f.close()
-         
+         error_code = ""
          
          with stdoutIO() as s:
-              exec(temp)
+              try:
+                   exec(temp)
+              except Exception as exp:
+                   error_code = exp
 
-         answer = open("demofile.txt", "r")
+
+         answer = open("Code/"+str(content['id'])+".txt", "r")
          answer = answer.read()
-         print(s.getvalue())
+         print(error_code)
          if(answer == s.getvalue()):
               returnValue = True
          else:
               returnValue = False
-         return jsonify({'result':returnValue})
+         if error_code == "":
+              error_code = returnValue
+         return jsonify({'result':str(error_code)})
 
 @app.route('/questiondesc', methods=['POST'])
 def QuestionDescription():
