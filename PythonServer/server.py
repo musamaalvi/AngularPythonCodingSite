@@ -26,39 +26,36 @@ def testCasesCodeRun():
     if request.method == "POST":
          content = request.get_json()
          temp = content['code']
-     #     t = temp.split("\\n")
-     #     f = open("demofile.txt", "w") 
-     #     for i in  t:
-     #          print(i,file=f)
-     #     f.close()
+     
          error_code = ""
          f = open("TestCasesCode/" +str(content['id'])+".txt")
          additionalCode = f.readline()
          answerFile = open("Code/"+str(content['id'])+".txt", "r")
+         returnObj= []
          while additionalCode:
                
                codetorun=str(temp)+"\n"+additionalCode
-               #print(codetorun)
+               
                with stdoutIO() as s:
                     try:
                          exec(codetorun)
                     except Exception as exp:
                          error_code = exp
-               
                answer = answerFile.readline()
-               
-               additionalCode = f.readline()
-               #print(answer)
-               
                if(answer == s.getvalue()):
                     returnValue = True
+                    returnObj.append(additionalCode+"=>"+answer+"|"+s.getvalue()+"|"+str(returnValue))
                     print(returnValue)
                else:
                     returnValue = False
+                    returnObj.append(additionalCode+"=>"+answer+"|"+s.getvalue()+"|"+str(returnValue))
                     print(returnValue)
-     #     if error_code == "":
-     #          error_code = returnValue
-         return jsonify({'result':'str(error_code)'})
+               
+
+               
+               additionalCode = f.readline()
+         
+         return jsonify({'result':returnObj})
 
 @app.route("/questions")
 def GetQuestions():
