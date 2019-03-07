@@ -44,11 +44,11 @@ def testCasesCodeRun():
                answer = answerFile.readline()
                if(answer == s.getvalue()):
                     returnValue = True
-                    returnObj.append(additionalCode+"=>"+answer+"|"+s.getvalue()+"|"+str(returnValue))
+                    returnObj.append(additionalCode+"|"+answer+"|"+s.getvalue()+"|"+str(returnValue))
                     print(returnValue)
                else:
                     returnValue = False
-                    returnObj.append(additionalCode+"=>"+answer+"|"+s.getvalue()+"|"+str(returnValue))
+                    returnObj.append(additionalCode+"|"+answer+"|"+s.getvalue()+"|"+str(returnValue))
                     print(returnValue)
                
 

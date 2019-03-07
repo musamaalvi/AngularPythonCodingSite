@@ -11,6 +11,20 @@
 <button id="Submit_Button" (click)=RunCode(pythonCode)>Click to Submit </button>
 </div>
 
-<div>
-  <p>{{codeResult}}</p>
+<div *ngIf="isAnswered">
+  <table style="width:100%">
+  <tr>
+    <th>Test Case</th>
+    <th>Expected</th> 
+    <th>Output</th>
+    <th>Correct Or Not</th>
+  </tr>
+  <tr *ngFor="let result of codeResult">
+    <td>{{result.split('|')[0]}}</td>
+    <td>{{result.split('|')[1]}}</td> 
+    <td>{{result.split('|')[2]}}</td>
+    <td>{{result.split('|')[3]}}</td>
+  </tr>
+ 
+</table>
 </div>

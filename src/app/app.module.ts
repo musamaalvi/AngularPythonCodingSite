@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
-
+import { DataTableModule } from 'primeng/primeng'; 
+import { PaginatorModule } from 'primeng/primeng'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,9 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTableModule, 
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

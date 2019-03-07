@@ -1,18 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-question-detail',
   templateUrl: './question-detail.component.html',
-  styleUrls: ['./question-detail.component.css']
+  styleUrls: ['./question-detail.component.css',
+  "../../../node_modules/primeng/resources/themes/nova-light/theme.css",
+  "../../../node_modules/primeng/resources/primeng.min.css",
+  "../../../node_modules/primeicons/primeicons.css",
+]
 })
+
 export class QuestionDetailComponent implements OnInit {
   id: number;
   serverData;
   isLoaded = false
+  isAnswered = false
   codeResult=""
-
+  @ViewChild('pythonCode') textBox;
+ 
   RunCode(pythonCode){
     var code = pythonCode.value;
     var obj = {
@@ -22,6 +29,7 @@ export class QuestionDetailComponent implements OnInit {
 
     this.httpClient.post('http://127.0.0.1:5002/testcasescoderun', obj).subscribe(data => {
       this.codeResult = data['result']
+      this.isAnswered = true
     })
   }
 
@@ -40,6 +48,7 @@ export class QuestionDetailComponent implements OnInit {
     this.httpClient.post('http://127.0.0.1:5002/questiondesc', obj).subscribe(data => {
       this.serverData = data
       this.isLoaded = true
+      this.textBox.placeholder = "def testing(n):"
       console.log(this.serverData)
     })
   }
