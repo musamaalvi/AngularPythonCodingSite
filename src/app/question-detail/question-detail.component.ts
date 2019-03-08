@@ -48,7 +48,7 @@ export class QuestionDetailComponent implements OnInit {
     this.httpClient.post('http://127.0.0.1:5002/questiondesc', obj).subscribe(data => {
       this.serverData = data
       this.isLoaded = true
-      this.textBox.placeholder = "def testing(n):"
+      this.textBox.nativeElement.innerHTML = "def testing(n):\n    "
       console.log(this.serverData)
     })
   }
