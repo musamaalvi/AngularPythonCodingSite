@@ -28,3 +28,7 @@ table {
       height: 300px;
       width: 300px;
   }
+
+  p{
+      width:200px;
+  }
