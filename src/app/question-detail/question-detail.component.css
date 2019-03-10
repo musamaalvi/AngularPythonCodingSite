@@ -29,6 +29,13 @@ table {
       width: 300px;
   }
 
-  p{
-      width:200px;
+ 
+
+  .SolutionDiv{
+      float: left;
+      margin-left:20px;
+  }
+
+  .ContainerForCode{
+      float: left;
   }

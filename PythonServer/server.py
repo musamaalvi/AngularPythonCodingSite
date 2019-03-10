@@ -21,6 +21,18 @@ def testingpurpose():
           print(line)
           line = f.readline()
      return jsonify({'result':'testing'})
+
+
+@app.route('/solutioncode', methods=['POST'])
+def SolutionCode():
+     if request.method == "POST":
+        content = request.get_json()
+        idForQues = content['id']
+        f = open("SolutionCode/" +str(idForQues)+".txt")
+        return jsonify({'result':f.read()})
+
+
+
 @app.route('/testcasescoderun', methods=['POST'])
 def testCasesCodeRun():
     if request.method == "POST":

@@ -20,6 +20,15 @@ export class QuestionDetailComponent implements OnInit {
   codeResult=""
   @ViewChild('pythonCode') textBox;
  
+
+  fetchSolution(paragraph){
+    var obj = {
+      id: this.id
+    }
+    this.httpClient.post('http://127.0.0.1:5002/solutioncode', obj).subscribe(data => {
+      paragraph.innerText = data['result']
+    })
+  }
   RunCode(pythonCode){
     var code = pythonCode.value;
     var obj = {
