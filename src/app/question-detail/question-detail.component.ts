@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { strictEqual } from 'assert';
 
 @Component({
   selector: 'app-question-detail',
@@ -20,7 +21,12 @@ export class QuestionDetailComponent implements OnInit {
   codeResult=""
   @ViewChild('pythonCode') textBox;
  
-
+  NextQuestion(){
+    window.location.href = window.location.origin + "/questiondetail/"+(this.id+1);
+  }
+  PrevQuestion(){
+    window.location.href = window.location.origin + "/questiondetail/"+(this.id-1);
+  }
   fetchSolution(paragraph){
     var obj = {
       id: this.id
