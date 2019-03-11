@@ -7,4 +7,4 @@ original string.
 string_times('Hi', 2) → 'HiHi'
 string_times('Hi', 3) → 'HiHiHi'
 string_times('Hi', 1) → 'Hi'
-|ef string_times(my_string, n):
+|ef string_times(my_string, n)
