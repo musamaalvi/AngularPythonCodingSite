@@ -7,4 +7,4 @@ directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
 xyz_there('abcxyz') → True
 xyz_there('abc.xyz') → False
 xyz_there('xyz.abc') → True
-| def xyz_there(my_string):
+|def xyz_there(my_string):

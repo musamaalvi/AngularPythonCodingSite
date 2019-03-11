@@ -8,4 +8,4 @@ True if we are in trouble.
 parrot_trouble(True, 6) → True
 parrot_trouble(True, 7) → False
 parrot_trouble(False, 6) → False
-| def parrot_trouble(talking, hour):
+|def parrot_trouble(talking, hour):

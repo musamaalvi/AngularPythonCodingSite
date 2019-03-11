@@ -7,4 +7,4 @@ another of the values, it does not count towards the sum.
 lone_sum(1, 2, 3) → 6
 lone_sum(3, 2, 3) → 2
 lone_sum(3, 3, 3) → 0
-| def lone_sum(a, b, c):
+|def lone_sum(a, b, c):

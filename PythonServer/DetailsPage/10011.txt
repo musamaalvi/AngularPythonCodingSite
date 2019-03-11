@@ -8,4 +8,4 @@ front.
 front3('Java') → 'JavJavJav'
 front3('Chocolate') → 'ChoChoCho'
 front3('abc') → 'abcabcabc'
-| def front3(my_string):
+|def front3(my_string):

@@ -8,4 +8,4 @@ absolute value of a number.
 love6(6, 4) → True
 love6(4, 5) → False
 love6(1, 5) → True
-| def love6(a, b):
+|def love6(a, b):

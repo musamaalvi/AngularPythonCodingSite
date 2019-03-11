@@ -10,4 +10,4 @@ higher in all cases.
 caught_speeding(60, False) → 0
 caught_speeding(65, False) → 1
 caught_speeding(65, True) → 0
-| def caught_speeding(speed, is_birthday):
+|def caught_speeding(speed, is_birthday):

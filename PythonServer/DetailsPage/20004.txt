@@ -8,4 +8,4 @@ count the end substring).
 last2('hixxhi') → 1
 last2('xaxxaxaxx') → 1
 last2('axxxaaxx') → 2
-| def last2(my_string):
+|def last2(my_string):

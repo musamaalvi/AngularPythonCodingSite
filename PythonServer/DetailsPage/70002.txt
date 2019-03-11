@@ -7,4 +7,4 @@ string.
 cat_dog('catdog') → True
 cat_dog('catcat') → False
 cat_dog('1cat1cadodog') → True
-| def cat_dog(my_string):
+|def cat_dog(my_string):

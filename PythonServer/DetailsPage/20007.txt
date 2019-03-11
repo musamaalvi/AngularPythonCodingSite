@@ -7,4 +7,4 @@ somewhere.
 array123([1, 1, 2, 3, 1]) → True
 array123([1, 1, 2, 4, 1]) → False
 array123([1, 1, 2, 1, 2, 3]) → True
-| def array123(nums):
+|def array123(nums):

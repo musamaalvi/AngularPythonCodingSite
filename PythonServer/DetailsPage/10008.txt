@@ -7,4 +7,4 @@ the string already begins with "not", return the string unchanged.
 not_string('candy') → 'not candy'
 not_string('x') → 'not x'
 not_string('not bad') → 'not bad'
-| def not_string(my_string):
+|def not_string(my_string):

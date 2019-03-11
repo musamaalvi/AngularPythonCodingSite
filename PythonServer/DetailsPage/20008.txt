@@ -8,4 +8,4 @@ substrings appear in the same place in both strings.
 string_match('xxcaazz', 'xxbaaz') → 3
 string_match('abc', 'abc') → 2
 string_match('abc', 'axc') → 0
-| def string_match(a, b):
+|def string_match(a, b):

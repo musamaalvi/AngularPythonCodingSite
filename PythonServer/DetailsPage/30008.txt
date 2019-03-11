@@ -8,4 +8,4 @@ length, but they may be empty (length 0).
 combo_string('Hello', 'hi') → 'hiHellohi'
 combo_string('hi', 'Hello') → 'hiHellohi'
 combo_string('aaa', 'b') → 'baaab'
-| def combo_string(a, b):
+|def combo_string(a, b):

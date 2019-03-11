@@ -6,4 +6,4 @@ Given a string, return a version without the first and last char, so "Hello" yie
 without_end('Hello') → 'ell'
 without_end('java') → 'av'
 without_end('coding') → 'odin'
-| def without_end(my_string):
+|def without_end(my_string):

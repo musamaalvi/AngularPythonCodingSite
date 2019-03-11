@@ -7,4 +7,4 @@ Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2.
 near_ten(12) → True
 near_ten(17) → False
 near_ten(19) → True
-| def near_ten(num):
+|def near_ten(num):

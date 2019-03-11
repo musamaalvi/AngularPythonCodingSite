@@ -7,4 +7,4 @@ e.g. "Hi" and "Bye" returns "HiByeByeHi".
 make_abba('Hi', 'Bye') → 'HiByeByeHi'
 make_abba('Yo', 'Alice') → 'YoAliceAliceYo'
 make_abba('What', 'Up') → 'WhatUpUpWhat'
-| def make_abba(a, b):
+|def make_abba(a, b):

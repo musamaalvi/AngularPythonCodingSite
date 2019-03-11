@@ -8,4 +8,4 @@ be in the range 0..len(str)-1 inclusive).
 missing_char('kitten', 1) → 'ktten'
 missing_char('kitten', 0) → 'itten'
 missing_char('kitten', 4) → 'kittn'
-| def missing_char(my_string, n):
+|def missing_char(my_string, n):

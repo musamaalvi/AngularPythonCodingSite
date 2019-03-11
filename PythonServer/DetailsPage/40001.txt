@@ -7,4 +7,4 @@ and the last element are equal.
 same_first_last([1, 2, 3]) → False
 same_first_last([1, 2, 3, 1]) → True
 same_first_last([1, 2, 1]) → True
-| def same_first_last(nums):
+|def same_first_last(nums):

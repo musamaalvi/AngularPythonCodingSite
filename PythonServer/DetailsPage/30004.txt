@@ -7,4 +7,4 @@ string. The string length will be at least 2.
 extra_end('Hello') → 'lololo'
 extra_end('ab') → 'ababab'
 extra_end('Hi') → 'HiHiHi'
-| def extra_end(my_string):
+|def extra_end(my_string):

@@ -9,4 +9,4 @@ squirrels play and False otherwise.
 squirrel_play(70, False) → True
 squirrel_play(95, False) → False
 squirrel_play(95, True) → True
-| def squirrel_play(temp, is_summer):
+|def squirrel_play(temp, is_summer):

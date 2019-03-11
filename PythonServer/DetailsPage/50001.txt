@@ -11,4 +11,4 @@ the result is 1 (maybe).
 date_fashion(5, 10) → 2
 date_fashion(5, 2) → 0
 date_fashion(5, 5) → 1
-| def date_fashion(you, date):
+|def date_fashion(you, date):

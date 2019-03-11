@@ -9,4 +9,4 @@ the party with the given values is successful, or False otherwise.
 cigar_party(30, False) → False
 cigar_party(50, False) → True
 cigar_party(70, True) → True
-| def cigar_party(cigars, is_weekend):
+|def cigar_party(cigars, is_weekend):
