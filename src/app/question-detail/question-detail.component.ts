@@ -63,7 +63,7 @@ export class QuestionDetailComponent implements OnInit {
     this.httpClient.post('http://127.0.0.1:5002/questiondesc', obj).subscribe(data => {
       this.serverData = data
       this.isLoaded = true
-      this.textBox.nativeElement.innerHTML = (this.serverData['some_message'].split(',')[1])+"\n    "
+      this.textBox.nativeElement.innerHTML = (this.serverData['some_message'].split('|')[1])+"\n    "
       console.log(this.serverData)
     })
   }

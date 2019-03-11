@@ -1,0 +1,7 @@
+make_tags('i', 'Yay')
+make_tags('i', 'Hello')
+make_tags('cite', 'Yay')
+make_tags('address', 'here')
+make_tags('body', 'Heart')
+make_tags('i', 'i')
+make_tags('i', ")

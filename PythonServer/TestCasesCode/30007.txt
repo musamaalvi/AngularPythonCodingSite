@@ -1,0 +1,8 @@
+without_end('Hello')
+without_end('java')
+without_end('coding')
+without_end('code')
+without_end('ab')
+without_end('Chocolate!')
+without_end('kitten')
+without_end('woohoo')

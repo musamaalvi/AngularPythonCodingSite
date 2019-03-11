@@ -1,0 +1,7 @@
+not_string('candy')
+not_string('x')
+not_string('not_bad')
+not_string('bad')
+not_string('not')
+not_string('is not')
+not_string('no')

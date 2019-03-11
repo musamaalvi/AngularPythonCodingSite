@@ -1,0 +1,8 @@
+make_ends([1, 2, 3])
+make ends([1, 2, 3, 4])
+make_ends([7, 4, 6, 2])
+make_ends([1, 2, 2, 2, 2, 2, 2, 3])
+make_ends([7, 4])
+make_ends([7])
+make_ends([5, 2, 9])
+make_ends([2, 3, 4, 1])

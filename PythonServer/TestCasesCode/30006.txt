@@ -1,0 +1,7 @@
+first_half('WooHoo')
+first_half('HelloThere')
+first_half('abcdef')
+first_half('ab')
+first_half(")
+first_half('0123456789')
+first_half('kitten')

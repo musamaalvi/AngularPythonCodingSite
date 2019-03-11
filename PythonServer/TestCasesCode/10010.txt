@@ -1,0 +1,8 @@
+front_back('code')
+front_back('a')
+front_back('ab')
+front_back('abc')
+front_back(")
+front_back('Chocolate')
+front_back('aavJ')
+front_back('hello')

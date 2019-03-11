@@ -1,0 +1,8 @@
+count_hi('abc hi ho')
+count_hi('ABChi hi')
+count_hi('hihi')
+count_hi('hiHIhi')
+count_hi(")
+count_hit('h')
+count_hi('Hi is no HI on ahI')
+count_hi('hiho not HOHIhi')

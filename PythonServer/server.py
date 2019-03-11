@@ -40,9 +40,9 @@ def testCasesCodeRun():
          temp = content['code']
      
          error_code = ""
-         f = open("TestCasesCode/" +str(content['id'])+".txt")
+         f = open("TestCasesCode/" +str(content['id'])+".txt", encoding='utf-8')
          additionalCode = f.readline()
-         answerFile = open("Code/"+str(content['id'])+".txt", "r")
+         answerFile = open("Code/"+str(content['id'])+".txt", "r", encoding='utf-8')
          returnObj= []
          while additionalCode:
                
@@ -72,7 +72,7 @@ def testCasesCodeRun():
 @app.route("/questions")
 def GetQuestions():
      arr = []
-     with open('MainPage/main.txt') as f:
+     with open('MainPage/main.txt', encoding='utf-8') as f:
           lines = f.readlines()
 
      for line in lines:
@@ -110,7 +110,7 @@ def analyzeText():
                    error_code = exp
 
 
-         answer = open("Code/"+str(content['id'])+".txt", "r")
+         answer = open("Code/"+str(content['id'])+".txt", "r", encoding='utf-8')
          answer = answer.read()
          print(error_code)
          if(answer == s.getvalue()):
@@ -127,7 +127,7 @@ def QuestionDescription():
          content = request.get_json()
          temp = content['id']
          
-         f = open("DetailsPage/"+str(temp)+".txt", "r")
+         f = open("DetailsPage/"+str(temp)+".txt", "r", encoding='utf-8')
          code = f.read()
          print("MainPage/"+str(temp)+".txt")
          print(code)

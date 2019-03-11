@@ -1,0 +1,8 @@
+first_two('Hello')
+first_two('abcdefg')
+first_two('ab')
+first_two('a')
+first_two(")
+first_two('Kitten')
+first_two('hi')
+first_two('hiya')
