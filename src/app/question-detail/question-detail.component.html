@@ -11,7 +11,7 @@
     <button id="Submit_Button" (click)=RunCode(pythonCode)>Click to Submit </button>
   </div>
 </div>
-<div class="SolutionDiv">
+<div class="SolutionDiv" *ngIf="ShowSolution">
   <pre #paragraphForSolution ></pre>
   <button id="" (click)="fetchSolution(paragraphForSolution)">Click to See Solution </button>
 </div>

@@ -7,6 +7,7 @@ from flask import Flask, request
 from flask_cors import CORS, cross_origin
 from flask_restful import Resource, Api
 from sys import version
+import os
 
 
 app = Flask(__name__)
@@ -118,7 +119,7 @@ def QuestionDescription():
         code = f.read()
         print("MainPage/{}.txt".format(str(temp)))
         print(code)
-        return jsonify({'some_message':code})
+        return jsonify({'some_message':code,'ShowSolution':os.path.isfile("SolutionCode/"+str(temp)+".txt")})
 
 
 @contextlib.contextmanager
