@@ -52,13 +52,18 @@ def testCasesCodeRun():
                     exec(codetorun)
                 except Exception as exp:
                     error_code = exp
-            answer = answerFile.readline()
-            local_environ = locals()
-            returnValue = (answer[:-1] ==  str(local_environ['value']))
-            text = additionalCode + "|" + answer + "|" + str(local_environ['value']) + "|" + str(returnValue)
-            returnObj.append(text)
-            additionalCode = file_handle.readline()
-        output = jsonify({'result':returnObj})
+            if(error_code==""):
+                answer = answerFile.readline()
+                local_environ = locals()
+                returnValue = (answer[:-1] ==  str(local_environ['value']))
+                text = additionalCode + "|" + answer + "|" + str(local_environ['value']) + "|" + str(returnValue)
+                returnObj.append(text)
+                additionalCode = file_handle.readline()
+            else:
+                
+                output = jsonify({'Error':True,'error_code':str(error_code)})
+                return output
+        output = jsonify({'result':returnObj,'Error':False})
         return output
 
 

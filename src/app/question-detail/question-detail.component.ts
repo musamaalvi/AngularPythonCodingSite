@@ -20,6 +20,8 @@ export class QuestionDetailComponent implements OnInit {
   isAnswered = false
   codeResult=""
   ShowSolution=false;  
+  ErrorOcurred=false;
+  error=""
   @ViewChild('pythonCode') textBox;
  
   NextQuestion(){
@@ -45,7 +47,16 @@ export class QuestionDetailComponent implements OnInit {
 
     this.httpClient.post('http://127.0.0.1:5002/testcasescoderun', obj).subscribe(data => {
       this.codeResult = data['result']
-      this.isAnswered = true
+      if(data['Error']==true){
+        this.ErrorOcurred=true;
+        this.isAnswered = false
+        this.error = data['error_code']
+      }
+      else{
+        this.ErrorOcurred=false;
+        this.isAnswered = true
+      }
+        
     })
   }
 
