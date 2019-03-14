@@ -72,6 +72,16 @@ def GetQuestions():
         arr.append(line.strip().split(",")[0])
     return json.dumps(arr)
 
+@app.route("/categories")
+def GetCategories():
+    arr = []
+    with open('MainPage/categories.txt', encoding='utf-8') as f:
+        lines = f.readlines()
+    for line in lines:
+        arr.append(line.strip().split(",")[1])
+        arr.append(line.strip().split(",")[0])
+    return json.dumps(arr)
+
 
 class Employees(Resource):
     def get(self):

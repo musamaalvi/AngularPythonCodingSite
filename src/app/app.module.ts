@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { DataTableModule } from 'primeng/primeng'; 
-import { PaginatorModule } from 'primeng/primeng'; 
+import { PaginatorModule } from 'primeng/primeng';
+import { CategoriesComponent } from './categories/categories.component'; 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionsComponent,
-    QuestionDetailComponent
+    QuestionDetailComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,5 @@
+Logic,10000
+IQ,20000
+Genereal,30000
+Python,40000
+Loops,50000
