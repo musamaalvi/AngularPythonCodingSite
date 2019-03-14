@@ -1,0 +1,12 @@
+sleep_in,10000
+monkey_trouble,10001
+sum_double,10002
+diff21,10003
+parrot_trouble,10004
+makes10,10005
+near_hundred,10006
+pos_neg,10007
+not_string,10008
+missing_char,10009
+front_back,10010
+front3,10011

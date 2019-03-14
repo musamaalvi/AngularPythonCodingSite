@@ -1,0 +1,6 @@
+count_evens,80000
+big_diff,80001
+centered_average,80002
+sum13,80003
+sum67,80004
+has22,80005

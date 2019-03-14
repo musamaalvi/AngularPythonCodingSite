@@ -3,3 +3,6 @@ IQ,20000
 Genereal,30000
 Python,40000
 Loops,50000
+If/Else,60000
+Object Oriented,70000
+Classes,80000

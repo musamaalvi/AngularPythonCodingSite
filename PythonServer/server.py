@@ -62,10 +62,12 @@ def testCasesCodeRun():
         return output
 
 
-@app.route("/questions")
+@app.route("/questions", methods=['POST'])
 def GetQuestions():
     arr = []
-    with open('MainPage/main.txt', encoding='utf-8') as f:
+    content = request.get_json()
+    temp = content['id']
+    with open('MainPage/'+str(temp)+'/main.txt', encoding='utf-8') as f:
         lines = f.readlines()
     for line in lines:
         arr.append(line.strip().split(",")[1])

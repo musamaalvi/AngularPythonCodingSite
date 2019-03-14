@@ -1,0 +1,9 @@
+cigar_party,50000
+date_fashion,50001
+squirrel_play,50002
+caught_speeding,50003
+sorta_sum,50004
+alarm_clock,50005
+love6,50006
+in1to10,50007
+near_ten,50008

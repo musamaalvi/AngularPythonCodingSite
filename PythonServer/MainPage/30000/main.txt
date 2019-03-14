@@ -1,0 +1,11 @@
+hello_name,30000
+make_abba,30001
+make_tags,30002
+make_out_word,30003
+extra_end,30004
+first_two,30005
+first_half,30006
+without_end,30007
+combo_string,30008
+non_start,30009
+left2,30010

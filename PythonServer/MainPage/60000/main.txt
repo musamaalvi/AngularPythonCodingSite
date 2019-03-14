@@ -1,0 +1,7 @@
+make_bricks,60000
+lone_sum,60001
+lucky_sum,60002
+no_teen_sum,60003
+round_sum,60004
+close_far,60005
+make_chocolate,60006

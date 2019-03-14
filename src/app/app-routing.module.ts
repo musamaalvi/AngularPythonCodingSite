@@ -6,6 +6,7 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
 import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [{path:'', component:CategoriesComponent},
+{path:'questions/:id', component:QuestionsComponent},
 {path:'questiondetail/:id',component:QuestionDetailComponent}
 ];
 

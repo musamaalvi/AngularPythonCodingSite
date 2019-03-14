@@ -1,0 +1,14 @@
+first_last6,40000
+same_first_last,40001
+make_pi,40002
+common_end,40003
+sum3,40004
+rotate_left3,40005
+reverse3,40006
+max_end3,40007
+sum2,40008
+middle_way,40009
+sum2,40010
+middle_way,40011
+make_ends,40012
+has23,40013
