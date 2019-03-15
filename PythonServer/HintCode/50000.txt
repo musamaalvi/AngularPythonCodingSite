@@ -1,0 +1,6 @@
+One approach begins with
+if is_weekend:
+  ...
+else:
+  ...
+In each section, check cigars with >=, <= etc. to return True if cigars is in range or else return False. Extra trick: for shorter code, note that "return (x >= 50)" automatically returns True if x >= 50 and False if x < 50. This works because the expression "(x >= 50)" evaluates to the value True or False, and then that value is returned.

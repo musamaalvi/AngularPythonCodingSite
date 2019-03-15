@@ -1,0 +1,1 @@
+The first element is nums[0] and the last element is nums[len(nums) - 1]. Check if either of those is == 6.

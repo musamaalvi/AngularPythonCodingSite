@@ -1,0 +1,3 @@
+The code
+return "xyz" + name
+would return "xyzBob" for the "Bob" example, so it's not a solution, but it shows the right code pattern.
