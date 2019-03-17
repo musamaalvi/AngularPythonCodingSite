@@ -8,7 +8,7 @@ from flask import Flask, request
 from flask_cors import CORS, cross_origin
 from flask_restful import Resource, Api
 from sys import version
-from system import call
+from subprocess import call
 
 app = Flask(__name__)
 api = Api(app)
