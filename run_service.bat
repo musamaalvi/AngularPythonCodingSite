@@ -1,0 +1,1 @@
+python C:\Users\user\Desktop\coding_bat_website\AngularPythonCodingSite_Usama\AngularPythonCodingSite\run_service.py
