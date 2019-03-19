@@ -22,6 +22,7 @@ export class QuestionDetailComponent implements OnInit {
   ShowSolution=false;  
   ErrorOcurred=false;
   error=""
+  SH = ""
   @ViewChild('pythonCode') textBox;
  
   NextQuestion(){
@@ -77,7 +78,17 @@ export class QuestionDetailComponent implements OnInit {
       this.isLoaded = true
       this.textBox.nativeElement.innerHTML = (this.serverData['some_message'].split('|')[1])+"\n    "
       console.log(this.serverData)
-      this.ShowSolution = data["ShowSolution"]
+      if(data["ShowSolution"]==true){
+        this.ShowSolution = data["ShowSolution"]
+        this.SH="Solution"
+      }
+      else if(data["ShowHint"]==true){
+        this.ShowSolution = true
+        this.SH="Hint"
+      }
+      else
+        this.ShowSolution=false
+      
     })
   }
 

@@ -30,7 +30,10 @@ def SolutionCode():
     if request.method == "POST":
         content = request.get_json()
         idForQues = content['id']
-        f = open("SolutionCode/" + str(idForQues) + ".txt")
+        if os.path.isfile("SolutionCode/"+str(idForQues)+".txt")==True:
+            f = open("SolutionCode/" + str(idForQues) + ".txt")
+        else:
+            f = open("HintCode/" + str(idForQues) + ".txt")
         return jsonify({'result' : f.read()})
 
 
@@ -136,7 +139,7 @@ def QuestionDescription():
         code = f.read()
         print("MainPage/{}.txt".format(str(temp)))
         print(code)
-        return jsonify({'some_message':code,'ShowSolution':os.path.isfile("SolutionCode/"+str(temp)+".txt")})
+        return jsonify({'some_message':code,'ShowSolution':os.path.isfile("SolutionCode/"+str(temp)+".txt"),'ShowHint':os.path.isfile("HintCode/"+str(temp)+".txt")})
 
 
 @contextlib.contextmanager

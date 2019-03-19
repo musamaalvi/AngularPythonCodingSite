@@ -5,4 +5,5 @@ elif yyy:
   return 2
 else:
   return 1
-where xxx and yyy compute with <=, >= if the you/date numbers get that result. The order of the if statements is significant -- the 0 result case takes precedence over the other cases, so that if statement comes first.
+where xxx and yyy compute with <=, >= if the you/date numbers get that result. 
+The order of the if statements is significant -- the 0 result case takes precedence over the other cases, so that if statement comes first.
