@@ -15,6 +15,7 @@ import { strictEqual } from 'assert';
 
 export class QuestionDetailComponent implements OnInit {
   id: number;
+  categoryId: number;
   serverData;
   isLoaded = false
   isAnswered = false
@@ -26,10 +27,10 @@ export class QuestionDetailComponent implements OnInit {
   @ViewChild('pythonCode') textBox;
  
   NextQuestion(){
-    window.location.href = window.location.origin + "/questiondetail/"+(this.id+1);
+    window.location.href = window.location.origin + "/questiondetail/"+(this.id+1)+"/"+this.categoryId;
   }
   PrevQuestion(){
-    window.location.href = window.location.origin + "/questiondetail/"+(this.id-1);
+    window.location.href = window.location.origin + "/questiondetail/"+(this.id-1)+"/"+this.categoryId;
   }
   fetchSolution(paragraph){
     var obj = {
@@ -38,6 +39,9 @@ export class QuestionDetailComponent implements OnInit {
     this.httpClient.post('http://127.0.0.1:5002/solutioncode', obj).subscribe(data => {
       paragraph.innerText = data['result']
     })
+  }
+  BackToQuestions(){
+    window.location.href = window.location.origin + "/questions/"+this.categoryId;
   }
   RunCode(pythonCode){
     var code = pythonCode.value;
@@ -68,6 +72,8 @@ export class QuestionDetailComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.id = +params.get('id');
+      if(params.keys.length>1)
+      this.categoryId = +params.get('id2')
     });
 
     var obj = {

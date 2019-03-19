@@ -24,7 +24,9 @@ export class QuestionsComponent implements OnInit {
       
     })
   }
-
+  BacktoCategories(){
+    window.location.href = window.location.origin;
+  }
   QuestionClicked(question){
     
   }

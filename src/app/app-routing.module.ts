@@ -7,7 +7,9 @@ import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [{path:'', component:CategoriesComponent},
 {path:'questions/:id', component:QuestionsComponent},
-{path:'questiondetail/:id',component:QuestionDetailComponent}
+{path:'questiondetail/:id',component:QuestionDetailComponent},
+{path:'questiondetail/:id/:id2',component:QuestionDetailComponent}
+
 ];
 
 @NgModule({
