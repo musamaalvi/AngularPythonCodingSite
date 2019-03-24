@@ -1,5 +1,8 @@
-<ul *ngFor="let item of Data; let i = index; let odd = odd ">
-  <li *ngIf="odd">
-    <a href="/questions/{{Data[i-1]}}"  id="{{Data[i-1]}}" #question>{{Data[i]}}</a>
-  </li>
-</ul>
+<div>
+  <h2>Categories</h2>
+  <ul *ngFor="let item of Data; let i = index; let odd = odd ">
+    <li *ngIf="odd">
+      <a href="/questions/{{Data[i-1]}}" id="{{Data[i-1]}}" #question> {{Data[i]}} </a>
+    </li>
+  </ul>
+</div>
