@@ -1,6 +1,8 @@
+<ul *ngFor="let item of Data; let i = index; let odd = odd ">
+  <li *ngIf="odd">
+    <a href="/questiondetail/{{Data[i-1]}}/{{categoryId}}"  id="{{Data[i-1]}}"
+      (click)=QuestionClicked(question) #question>{{Data[i]}}</a>
+  </li>
+</ul>
 
-    <div  *ngFor="let item of Data; let i = index; let odd = odd ">
-      <a href="/questiondetail/{{Data[i-1]}}/{{categoryId}}" *ngIf="odd" id="{{Data[i-1]}}" (click)=QuestionClicked(question)  #question>{{Data[i]}}</a>
-    </div>
-
-    <button (click)="BacktoCategories()">Back to Categories</button>
+<button (click)="BacktoCategories()">Back to Categories</button>
