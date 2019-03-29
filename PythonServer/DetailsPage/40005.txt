@@ -1,6 +1,6 @@
 List-1 > rotate_left3
 
-Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2,
+Given a list of integers length 3, return a list with the elements "rotated left" so {1, 2,
 3} yields {2, 3, 1}.
 
 

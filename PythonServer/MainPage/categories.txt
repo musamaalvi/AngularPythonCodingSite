@@ -1,8 +1,8 @@
-Logic,10000
-IQ,20000
-Genereal,30000
-Python,40000
-Loops,50000
-If/Else,60000
-Object Oriented,70000
-Classes,80000
+Warmup-1,10000
+Warmup-2,20000
+String-1,30000
+List-1,40000
+Logic-1,50000
+Logic-2,60000
+String-2,70000
+List-2,80000

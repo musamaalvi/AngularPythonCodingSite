@@ -1,6 +1,6 @@
 List-2 > count_evens
 
-Return the number of even ints in the given array. Note: the % "mod" operator computes
+Return the number of even integers in the given list. Note: the % "mod" operator computes
 the remainder, e.g. 5 % 2 is 1.
 
 

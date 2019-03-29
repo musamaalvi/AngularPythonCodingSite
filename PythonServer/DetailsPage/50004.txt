@@ -1,6 +1,6 @@
 Logic-1 > sorta_sum
 
-Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are
+Given 2 integers, a and b, return their sum. However, sums in the range 10..19 inclusive, are
 forbidden, so in that case just return 20.
 
 
