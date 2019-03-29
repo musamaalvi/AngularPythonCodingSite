@@ -3,7 +3,7 @@ front_times,20001
 string_bits,20002
 string_splosion,20003
 last2,20004
-array_count9,20005
-array_front9,20006
-array123,20007
+list_count9,20005
+list_front9,20006
+list123,20007
 string_match,20008
