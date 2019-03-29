@@ -1,3 +1,5 @@
+##to-do: use fixed directory instead of relative directory
+
 import sys
 import contextlib
 import json
@@ -9,6 +11,8 @@ from flask_cors import CORS, cross_origin
 from flask_restful import Resource, Api
 from sys import version
 from subprocess import call
+
+ABSOLUTE_PATH = 'C:\\CodingBat\\PythonServer'
 
 app = Flask(__name__)
 api = Api(app)
@@ -155,5 +159,6 @@ api.add_resource(Employees, '/employees') # Route_1
 api.add_resource(Employees_Name, '/employees/<employee_id>') # Route_3
 
 if __name__ == '__main__':
-    call(['cd', os.getcwd()], shell=True)
+    os.chdir(ABSOLUTE_PATH)
+    #call(['cd', ABSOLUTE_PATH], shell=True)
     app.run(port=5002)
