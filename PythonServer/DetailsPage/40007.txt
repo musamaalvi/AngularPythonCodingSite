@@ -1,7 +1,7 @@
 List-1 > max_end3
 
-Given an array of ints length 3, figure out which is larger, the first or last element in the
-array, and set all the other elements to be that value. Return the changed array.
+Given a list of integers length 3, figure out which is larger, the first or last element in the
+list, and set all the other elements to be that value. Return the changed list.
 
 
 max_end3([1, 2, 3]) → [3, 3, 3]

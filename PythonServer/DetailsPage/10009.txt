@@ -1,8 +1,8 @@
 Warmup-1 > missing_char
 
-Given a non-empty string and an int n, return a new string where the char at index n has
+Given a non-empty string and an integer n, return a new string where the char at index n has
 been removed. The value of n will be a valid index of a char in the original string (i.e. n will
-be in the range 0..len(str)-1 inclusive).
+be in the range 0..len(string)-1 inclusive).
 
 
 missing_char('kitten', 1) → 'ktten'

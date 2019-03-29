@@ -1,6 +1,6 @@
 List-1 > sum3
 
-Given an array of ints length 3, return the sum of all the elements.
+Given a list of integers length 3, return the sum of all the elements.
 
 
 sum3([1, 2, 3]) → 6

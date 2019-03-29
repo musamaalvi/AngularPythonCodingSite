@@ -1,6 +1,6 @@
 List-1 > middle_way
 
-Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their
+Given 2 integer lists, a and b, each length 3, return a new list length 2 containing their
 middle elements.
 
 
