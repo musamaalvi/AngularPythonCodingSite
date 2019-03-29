@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-color: #606060;
+    background-color: #C8C8C8;
   }
 
 
   li a:hover {
     font-size: 30px;
-    background: #505050;
+    background: #BEBEBE;
   }
 
   

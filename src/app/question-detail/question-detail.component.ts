@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { strictEqual } from 'assert';
 
@@ -41,7 +41,9 @@ export class QuestionDetailComponent implements OnInit {
     })
   }
   BackToQuestions(){
-    window.location.href = window.location.origin + "/questions/"+this.categoryId;
+    //window.location.href = window.location.origin + "/questions/"+this.categoryId;
+    this.router.navigateByUrl('/questions/'+this.categoryId)
+
   }
   RunCode(pythonCode){
     var code = pythonCode.value;
@@ -65,7 +67,7 @@ export class QuestionDetailComponent implements OnInit {
     })
   }
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient) {
+  constructor(private route: ActivatedRoute, private httpClient: HttpClient, private router:Router) {
     
    }
 

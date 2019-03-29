@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class QuestionsComponent implements OnInit {
   Data;
   categoryId;
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient) {
+  constructor(private route: ActivatedRoute, private httpClient: HttpClient, private router: Router) {
 
     this.route.paramMap.subscribe(params =>{
       this.categoryId = +params.get('id')      
@@ -25,7 +25,8 @@ export class QuestionsComponent implements OnInit {
     })
   }
   BacktoCategories(){
-    window.location.href = window.location.origin;
+    //window.location.href = window.location.origin;
+    this.router.navigateByUrl('/');
   }
   QuestionClicked(question){
     
