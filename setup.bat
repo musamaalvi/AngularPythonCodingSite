@@ -8,5 +8,4 @@ python setup.py install
 cd ..//..
 pyinstaller run_service.py
 pyinstaller run_service.py -F
-pyinstaller PythonServer\\server.py
-pyinstaller PythonServer\\server.py -F
+npm install --save-dev @angular-devkit/build-angular
