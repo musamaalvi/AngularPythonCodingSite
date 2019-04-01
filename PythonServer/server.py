@@ -12,7 +12,7 @@ from flask_restful import Resource, Api
 from sys import version
 from subprocess import call
 
-ABSOLUTE_PATH = 'C:\\CodingBat\\PythonServer'
+#ABSOLUTE_PATH = 'C:\\CodingBat\\PythonServer'
 
 app = Flask(__name__)
 api = Api(app)
@@ -39,6 +39,15 @@ def SolutionCode():
         else:
             f = open("HintCode/" + str(idForQues) + ".txt")
         return jsonify({'result' : f.read()})
+
+
+@app.route('/shownextprev', methods=['POST'])
+def NextPrev():
+    if request.method == "POST":
+        content = request.get_json()
+        QuestionId = content['id']
+        
+        return jsonify({'next' : os.path.isfile("DetailsPage/"+str(QuestionId+1)+".txt"),'prev':os.path.isfile("DetailsPage/"+str(QuestionId-1)+".txt")})
 
 
 @app.route('/testcasescoderun', methods=['POST'])
@@ -159,6 +168,6 @@ api.add_resource(Employees, '/employees') # Route_1
 api.add_resource(Employees_Name, '/employees/<employee_id>') # Route_3
 
 if __name__ == '__main__':
-    os.chdir(ABSOLUTE_PATH)
+   # os.chdir(ABSOLUTE_PATH)
     #call(['cd', ABSOLUTE_PATH], shell=True)
     app.run(port=5002)

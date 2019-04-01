@@ -18,8 +18,8 @@
 </div>
 
 <div class="NextPrevOptions">
-    <button id="" (click)="NextQuestion()">Next Question </button>
-    <button id="" (click)="PrevQuestion()">Prev Question </button>
+    <button *ngIf="ShowNext" (click)="NextQuestion()">Next Question </button>
+    <button  *ngIf="ShowPrev" (click)="PrevQuestion()">Prev Question </button>
 </div>
 
 <div *ngIf="isAnswered">

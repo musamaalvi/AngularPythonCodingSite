@@ -24,6 +24,8 @@ export class QuestionDetailComponent implements OnInit {
   ErrorOcurred=false;
   error=""
   SH = ""
+  ShowNext=true
+  ShowPrev=true
   @ViewChild('pythonCode') textBox;
  
   NextQuestion(){
@@ -68,7 +70,7 @@ export class QuestionDetailComponent implements OnInit {
   }
 
   constructor(private route: ActivatedRoute, private httpClient: HttpClient, private router:Router) {
-    
+   
    }
 
   ngOnInit() {
@@ -77,7 +79,14 @@ export class QuestionDetailComponent implements OnInit {
       if(params.keys.length>1)
       this.categoryId = +params.get('id2')
     });
-
+    var obj1 = {
+      'id':this.id
+    }
+    this.httpClient.post('http://127.0.0.1:5002/shownextprev', obj1).subscribe(data => {
+     this.ShowNext = data['next']
+     this.ShowPrev = data['prev']
+        
+    })
     var obj = {
       id:this.id
     }
