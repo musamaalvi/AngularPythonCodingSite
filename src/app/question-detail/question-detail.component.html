@@ -15,6 +15,7 @@
 <div class="SolutionDiv" *ngIf="ShowSolution">
   <pre #paragraphForSolution ></pre>
   <button id="" (click)="fetchSolution(paragraphForSolution)">Click to See {{SH}} </button>
+  <button id="" (click)="ShowDebugger()">Click to {{debugger}} Debugger </button>
 </div>
 
 <div class="NextPrevOptions">
@@ -42,3 +43,6 @@
 <div *ngIf="ErrorOcurred">
   <p>{{error}}</p>
 </div>
+
+<iframe *ngIf="DebugMode" [class.thumbnail]="thumbnail" [src]="safeSrc" width="100%" height="1000px" frameborder="0" webkitallowfullscreen mozallowfullscreen
+      allowfullscreen></iframe>

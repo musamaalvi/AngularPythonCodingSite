@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { strictEqual } from 'assert';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-question-detail',
@@ -26,6 +27,9 @@ export class QuestionDetailComponent implements OnInit {
   SH = ""
   ShowNext=true
   ShowPrev=true
+  debugger="See";
+  DebugMode = false;
+  safeSrc: SafeResourceUrl;
   @ViewChild('pythonCode') textBox;
  
   NextQuestion(){
@@ -41,6 +45,17 @@ export class QuestionDetailComponent implements OnInit {
     this.httpClient.post('http://127.0.0.1:5002/solutioncode', obj).subscribe(data => {
       paragraph.innerText = data['result']
     })
+  }
+  ShowDebugger(){
+      if(this.DebugMode==true){
+        this.debugger="See"
+        this.DebugMode=false
+      }
+      else{
+        this.debugger="Hide"
+        this.DebugMode=true
+      }
+        
   }
   BackToQuestions(){
     //window.location.href = window.location.origin + "/questions/"+this.categoryId;
@@ -69,8 +84,8 @@ export class QuestionDetailComponent implements OnInit {
     })
   }
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient, private router:Router) {
-   
+  constructor(private sanitizer: DomSanitizer, private route: ActivatedRoute, private httpClient: HttpClient, private router:Router) {
+    this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl("http://localhost:8003/visualize.html#mode=edit");
    }
 
   ngOnInit() {
