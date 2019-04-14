@@ -29,7 +29,9 @@ export class QuestionDetailComponent implements OnInit {
   ShowPrev=true
   debugger="See";
   DebugMode = false;
+  apiURL="http://127.0.0.1:5002/"
   safeSrc: SafeResourceUrl;
+  safeSRCURL="http://localhost:8003/visualize.html#mode=edit"
   @ViewChild('pythonCode') textBox;
  
   NextQuestion(){
@@ -42,7 +44,7 @@ export class QuestionDetailComponent implements OnInit {
     var obj = {
       id: this.id
     }
-    this.httpClient.post('http://127.0.0.1:5002/solutioncode', obj).subscribe(data => {
+    this.httpClient.post(this.apiURL+'solutioncode', obj).subscribe(data => {
       paragraph.innerText = data['result']
     })
   }
@@ -69,7 +71,7 @@ export class QuestionDetailComponent implements OnInit {
       code: pythonCode.value
     }
 
-    this.httpClient.post('http://127.0.0.1:5002/testcasescoderun', obj).subscribe(data => {
+    this.httpClient.post(this.apiURL+'testcasescoderun', obj).subscribe(data => {
       this.codeResult = data['result']
       if(data['Error']==true){
         this.ErrorOcurred=true;
@@ -85,7 +87,7 @@ export class QuestionDetailComponent implements OnInit {
   }
 
   constructor(private sanitizer: DomSanitizer, private route: ActivatedRoute, private httpClient: HttpClient, private router:Router) {
-    this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl("http://localhost:8003/visualize.html#mode=edit");
+    this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(this.safeSRCURL);
    }
 
   ngOnInit() {
@@ -97,7 +99,7 @@ export class QuestionDetailComponent implements OnInit {
     var obj1 = {
       'id':this.id
     }
-    this.httpClient.post('http://127.0.0.1:5002/shownextprev', obj1).subscribe(data => {
+    this.httpClient.post(this.apiURL+'shownextprev', obj1).subscribe(data => {
      this.ShowNext = data['next']
      this.ShowPrev = data['prev']
         
@@ -105,7 +107,7 @@ export class QuestionDetailComponent implements OnInit {
     var obj = {
       id:this.id
     }
-    this.httpClient.post('http://127.0.0.1:5002/questiondesc', obj).subscribe(data => {
+    this.httpClient.post(this.apiURL+'questiondesc', obj).subscribe(data => {
       this.serverData = data
       this.isLoaded = true
       this.textBox.nativeElement.innerHTML = (this.serverData['some_message'].split('|')[1])+"\n    "

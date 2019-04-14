@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class QuestionsComponent implements OnInit {
   Data;
   categoryId;
+  apiURL="http://127.0.0.1:5002/"
   constructor(private route: ActivatedRoute, private httpClient: HttpClient, private router: Router) {
 
     this.route.paramMap.subscribe(params =>{
@@ -17,7 +18,7 @@ export class QuestionsComponent implements OnInit {
     var obj = {
       id:this.categoryId
     }
-    this.httpClient.post('http://127.0.0.1:5002/questions', obj).subscribe(data =>{
+    this.httpClient.post(this.apiURL+'questions', obj).subscribe(data =>{
       this.Data = data
      
       console.log(data)
