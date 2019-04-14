@@ -20,15 +20,15 @@
 
 <div class="NextPrevOptions">
     <button *ngIf="ShowNext" (click)="NextQuestion()">Next Question </button>
-    <button  *ngIf="ShowPrev" (click)="PrevQuestion()">Prev Question </button>
+    <button *ngIf="ShowPrev" (click)="PrevQuestion()">Prev Question </button>
 </div>
 
 <div *ngIf="isAnswered">
   <table style="width:100%">
     <tr>
       <th>Test Case</th>
-      <th>Expected</th>
-      <th>Output</th>
+      <th>Expected Ouput</th>
+      <th>Actual Output</th>
       <th>Correct Or Not</th>
     </tr>
     <tr *ngFor="let result of codeResult">
