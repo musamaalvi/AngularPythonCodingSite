@@ -72,7 +72,11 @@ def testCasesCodeRun():
                 answer = answerFile.readline()
                 local_environ = locals()
                 returnValue = (answer[:-1] ==  str(local_environ['value']))
-                text = additionalCode + "|" + answer + "|" + str(local_environ['value']) + "|" + str(returnValue)
+                if returnValue: 
+                    output = "pass"
+                else:
+                    output = "fail"
+                text = additionalCode + "|" + answer + "|" + str(local_environ['value']) + "|" + output
                 returnObj.append(text)
                 additionalCode = file_handle.readline()
             else:
